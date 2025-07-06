@@ -1,0 +1,17 @@
+<template>
+    <lightning-card title="Focus Timer Pro" icon-name="utility:clock">
+        <div class="container">
+            <div class="timer-circle">
+                <svg class="progress-ring" width="180" height="180">
+                    <circle class="progress-ring__circle" stroke="tomato" stroke-width="8" fill="transparent" r="80"
+                        cx="90" cy="90" style={circleStyle} />
+                </svg>
+                <div class="time-text">{formattedTime}</div>
+            </div>
+            <div class="buttons">
+                <lightning-button variant="brand" label={buttonLabel} onclick={handleStartPause}></lightning-button>
+                <lightning-button variant="neutral" label="Reset" onclick={handleReset}></lightning-button>
+            </div>
+        </div>
+    </lightning-card>
+</template>
