@@ -4,19 +4,26 @@
             <lightning-layout-item padding="around-small">
                 <div class="header-column">
                     <p class="field-title" title="Name">Phone</p>
-                    <p>+91 8340277080</p>
+                    <div style="padding:0.5rem; background:#16325c">
+                        <p class="slds-text-color_inverse">+91 8340277080</p>
+                    </div>
                 </div>
             </lightning-layout-item>
             <lightning-layout-item padding="around-small">
                 <div class="header-column">
                     <p class="field-title" title="Name">Email</p>
-                    <p>kkamran336@gmail.com</p>
+                    <div style="padding:0.5rem; background:#16325c">
+                        <p class="slds-text-color_inverse">kkamran336@gmail.com</p>
+                    </div>
                 </div>
             </lightning-layout-item>
             <lightning-layout-item padding="around-small">
                 <div class="header-column">
                     <p class="field-title" title="Address">Address</p>
-                    <p>Bangalore, India</p>
+                    <div style="padding:0.5rem; background:#16325c">
+                        <p class="slds-text-color_inverse">Bangalore, India</p>
+                    </div>
+                    <p class="slds-text-color_inverse">Bangalore, India</p>
                 </div>
             </lightning-layout-item>
             <lightning-layout-item padding="around-small">
@@ -36,11 +43,9 @@
                 Dedicated Salesforce engineer with demonstrated History of serving in multiple industry.
             </div>
             <div class="slds-var-m-around_medium">
-                <p class="slds-text-body_regular">Salesforce professional with experience working as a full-stack
-                    Salesforce developer, specializing in
-                    backend development (Apex, data modeling, integration), front-end development/UI/UX (LWC, APP
-                    builder), configuration (declarative customization, security), testing and deployment (unit testing,
-                    deployment, version control), and continuous learning.</p>
+                <p class="slds-text-body_regular">
+                    {summary}
+                </p>
             </div>
         </lightning-tab>
         <lightning-tab label="Experience">
@@ -52,15 +57,11 @@
                             Infosys
                             09/2024 - present </strong>
                     </div>
-                    <ul class="slds-list_dotted">
-                        <li>Working Currently in Renowned Telecom Industry Project.</li>
-                        <li>Consult and Implement features in vlocity Order Orchestration in different scenarios.</li>
-                        <li>Utilise and leverage vlocity Integration Procedures and Data transforms / Data Raptors.</li>
-                        <li>Create Autotask and Orchestration Item Implementations in Apex to orchestrate orders to
-                            upstream and Downstream Systems.</li>
-                        <li>Orchestrate Orders through Callout via Integration Procedure and Apex to Downstream systems
-                            for further Provisioning. </li>
-                    </ul>
+                    <template for:each={Experience.Infosys} for:item="infyExp">
+                        <ul key={infyExp} class="slds-list_dotted">
+                            <li>{infyExp}</li>
+                        </ul>
+                    </template>
                 </lightning-accordion-section>
 
                 <lightning-accordion-section name="B" label="Salesforce">
@@ -69,14 +70,11 @@
                             Salesforce.com
                             11/2023 - 07/2024 </strong>
                     </div>
-                    <ul class="slds-list_dotted">
-                        <li>Implement CPQ custom solutions for client to achieve the required business goals.</li>
-                        <li>work with consultant partener developers and architects to resolve business impacting
-                            blockers on implementations.</li>
-                        <li>Conduct Code reviews and solution reviews for their Implementations.</li>
-                        <li>Enforce Best practices on codes and Implementations.</li>
-                        <li>Consult with Apex and flows utilization with CPQ while following Industry standards.</li>
-                    </ul>
+                    <template for:each={Experience.Salesforce} for:item="sfExperience">
+                        <ul key={sfExperience} class="slds-list_dotted">
+                            <li>{sfExperience}</li>
+                        </ul>
+                    </template>
                 </lightning-accordion-section>
 
                 <lightning-accordion-section name="C" label="BugendaiTech">
@@ -84,50 +82,32 @@
                             Bugendaitech (2Years)
                             11/2021 - 11/2223,</strong>
                     </div>
-                    <ul class="slds-list_dotted">
-                        <li>Worked on APEX development for creating custom solutions on the Salesforce platform for
-                            Clients. worked on managed & unmanaged Packages and added features and Customizations.</li>
-                        <li>Created Triggers, LWC components, Test classes, and Unit testing. Asynchronous Apex(ex:
-                            future method, schedulable, queueable ) classes.Custom FSL(Field service Lightning).</li>
-                        <li>Version control, Salesforce DX projects, Agile, and deployment.Analytical and critical
-                            thinking in solution design.</li>
-                        <li>Worked on areas such as managing clients, understanding client's business use cases,
-                            Requirement Gathering, Analyzation, solution designing, Data modeling, feature
-                            development,Implementation, Testing, and Deployment.</li>
-                        <li>Based on the Client's Requirements I provided them the correct Declarative/Custom Solutions
-                            and approach to solve the problem.</li>
-                        <li>Used REST APIs to do various third-party integrations of salesforce with external systems.
-                        </li>
-                    </ul>
+                    <template for:each={Experience.BugendaiTech} for:item="btExperience">
+                        <ul key={btExperience} class="slds-list_dotted">
+                            <li>{btExperience}</li>
+                        </ul>
+                    </template>
                 </lightning-accordion-section>
             </lightning-accordion>
 
         </lightning-tab>
         <lightning-tab label="Skills">
-            <ul class="slds-list_dotted">
-                <li>Apex</li>
-                <li>DSA</li>
-                <li>Java</li>
-                <li>REST API Integrartions</li>
-                <li>JAVASCRIPT</li>
-                <li>Flow builder</li>
-                <li>LWC</li>
-                <li>git & Github</li>
-                <li>Apex Triggers</li>
-            </ul>
+            <template for:each={skills} for:item="skill">
+                <ul key={skill}>
+                    <div class="slds-box slds-var-m-around_xxx-small">
+                        <li class="pro-header">{skill}</li>
+                    </div>
+                </ul>
+            </template>
         </lightning-tab>
         <lightning-tab label="Certifications">
-            <ul class="slds-list_dotted">
-                <div class="pro-header">
-                    <li>Platform Developer I</li>
-                </div>
-                <div class="pro-header">
-                    <li>Salesforce Certified Administrator</li>
-                </div>
-                <div class="pro-header">
-                    <li>Salesforce Associate</li>
-                </div>
-            </ul>
+            <template for:each={Certifications} for:item="certification">
+                <ul key={certification} class="slds-list_dotted">
+                    <div class="pro-header">
+                        <li>{certification}</li>
+                    </div>
+                </ul>
+            </template>
         </lightning-tab>
         <lightning-tab label="Projects">
             <div class="pro-header">
@@ -136,22 +116,18 @@
             <div class="sub-header">
                 Leading Gas distribution infrastructure solution provider of USA.
             </div>
-            <ul class="slds-list_dotted">
-                <li>Responsible for writing all the backend server side logic in Apex.</li>
-                <li>Created multiple automations, programmatic and declarative to drive the business efficiently.</li>
-                <li>built the backend functionality of custom field service lightning for the workers and resources to
-                    acknowledge Jobs and accept the dispatched job from the dispatcher on the dispatcher console.</li>
-                <li>Built the dispatcher console to dispatch jobs and added the functionality to notify resources and
-                    workers on the feild through their mobile phones.</li>
-                <li>built email services and Text messages automations in apex. Created logic for capturing response and
-                    update records in SF.</li>
-            </ul>
+            <!-- <template for:each={Projects.Artera} for:item="Artera">
+                <ul key={Artera} class="slds-list_dotted">
+                    <li>Sample</li>
+                </ul>
+            </template> -->
         </lightning-tab>
     </lightning-tabset>
+
     <div class="slds-size_4-of-4">
-        <div class="slds-text-align_center slds-m-around_x-small pro-header">Achievements
+        <div class="slds-text-align_center slds-var-m-around_x-small pro-header">Achievements
             Highlights.</div>
-        <lightning-carousel disable-auto-scroll="true">
+        <lightning-carousel>
             <lightning-carousel-image src={performanceImage} header="BugendaiTech" description="Performer of the Month"
                 alternative-text="Award for excellence delivery for the Month.">
             </lightning-carousel-image>

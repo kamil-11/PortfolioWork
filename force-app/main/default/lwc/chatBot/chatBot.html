@@ -1,0 +1,17 @@
+<template>
+    <lightning-card title="Salesforce Support Bot 🤖">
+        <div class="chat-window">
+            <template for:each={messages} for:item="msg">
+                <div key={msg.id} class={msg.sender}>
+                    <span>{msg.text}</span>
+                </div>
+            </template>
+        </div>
+
+        <div class="input-section">
+            <lightning-input type="text" value={userInput} label="Your Message"
+                onchange={handleInput}></lightning-input>
+            <lightning-button label="Send" onclick={sendMessage}></lightning-button>
+        </div>
+    </lightning-card>
+</template>
