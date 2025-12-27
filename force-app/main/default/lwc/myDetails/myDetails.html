@@ -1,130 +1,131 @@
 <template>
-    <div class="c-container">
+    <div class="c-container wrapper">
         <lightning-layout class="slds-grid slds-grid_align-spread slds-grid_pull-padded" multiple-rows="true">
             <lightning-layout-item padding="around-small">
                 <div class="header-column">
-                    <p class="field-title" title="Name">Phone</p>
-                    <div style="padding:0.5rem; background:#16325c">
+                    <p class="field-title slds-var-m-around_medium" title="Name">Phone</p>
+                    <div class="slds-var-m-around_medium">
                         <p class="slds-text-color_inverse">+91 8340277080</p>
                     </div>
                 </div>
             </lightning-layout-item>
             <lightning-layout-item padding="around-small">
                 <div class="header-column">
-                    <p class="field-title" title="Name">Email</p>
-                    <div style="padding:0.5rem; background:#16325c">
+                    <p class="field-title slds-var-m-around_medium" title="Name">Email</p>
+                    <div class="slds-var-m-around_medium">
                         <p class="slds-text-color_inverse">kkamran336@gmail.com</p>
                     </div>
                 </div>
             </lightning-layout-item>
             <lightning-layout-item padding="around-small">
                 <div class="header-column">
-                    <p class="field-title" title="Address">Address</p>
-                    <div style="padding:0.5rem; background:#16325c">
+                    <p class="field-title slds-var-m-around_medium" title="Address">Address</p>
+                    <div class="slds-var-m-around_medium">
                         <p class="slds-text-color_inverse">Bangalore, India</p>
                     </div>
-                    <p class="slds-text-color_inverse">Bangalore, India</p>
                 </div>
             </lightning-layout-item>
-            <lightning-layout-item padding="around-small">
-                <lightning-button class="large-font-button slds-var-m-around_medium" variant="brand"
+
+            <lightning-layout-item padding="around-large">
+                <lightning-button class="large-font-button slds-var-m-top_xx-large" variant="brand"
                     label="Download Resume" onclick={handleClick}>Download
                     Resume</lightning-button>
             </lightning-layout-item>
         </lightning-layout>
     </div>
+    <div class="myTabset">
+        <lightning-tabset>
+            <lightning-tab label="Summary">
+                <div class="pro-header">
+                    <strong>Software Engineer, Salesforce Development</strong>
+                </div>
+                <div class="sub-header">
+                    Dedicated Salesforce engineer with demonstrated History of serving in multiple industry.
+                </div>
+                <div class="slds-var-m-around_medium">
+                    <p class="slds-text-body_regular slds-text-color_inverse">
+                        {summary}
+                    </p>
+                </div>
+            </lightning-tab>
+            <lightning-tab label="Experience">
 
-    <lightning-tabset>
-        <lightning-tab label="Summary">
-            <div class="pro-header">
-                <strong>Software Engineer, Salesforce Development</strong>
-            </div>
-            <div class="sub-header">
-                Dedicated Salesforce engineer with demonstrated History of serving in multiple industry.
-            </div>
-            <div class="slds-var-m-around_medium">
-                <p class="slds-text-body_regular">
-                    {summary}
-                </p>
-            </div>
-        </lightning-tab>
-        <lightning-tab label="Experience">
+                <lightning-accordion allow-multiple-sections-open onsectiontoggle={handleSectionToggle}
+                    active-section-name={activeSections}>
+                    <lightning-accordion-section name="A" label="Infosys">
+                        <div class="pro-header"><strong>Software Engineer / vlocity Integration Consultant
+                                Infosys
+                                09/2024 - present </strong>
+                        </div>
+                        <template for:each={Experience.Infosys} for:item="infyExp">
+                            <ul key={infyExp} class="slds-list_dotted">
+                                <li class="slds-text-color_inverse">{infyExp}</li>
+                            </ul>
+                        </template>
+                    </lightning-accordion-section>
 
-            <lightning-accordion allow-multiple-sections-open onsectiontoggle={handleSectionToggle}
-                active-section-name={activeSections}>
-                <lightning-accordion-section name="A" label="Infosys">
-                    <div class="pro-header"><strong>Software Engineer / vlocity Integration Consultant
-                            Infosys
-                            09/2024 - present </strong>
-                    </div>
-                    <template for:each={Experience.Infosys} for:item="infyExp">
-                        <ul key={infyExp} class="slds-list_dotted">
-                            <li>{infyExp}</li>
-                        </ul>
-                    </template>
-                </lightning-accordion-section>
+                    <lightning-accordion-section name="B" label="Salesforce">
+                        <div class="pro-header">
+                            <strong>Salesforce Developer
+                                Salesforce.com
+                                11/2023 - 07/2024 </strong>
+                        </div>
+                        <template for:each={Experience.Salesforce} for:item="sfExperience">
+                            <ul key={sfExperience} class="slds-list_dotted">
+                                <li class="slds-text-color_inverse">{sfExperience}</li>
+                            </ul>
+                        </template>
+                    </lightning-accordion-section>
 
-                <lightning-accordion-section name="B" label="Salesforce">
-                    <div class="pro-header">
-                        <strong>Salesforce Developer
-                            Salesforce.com
-                            11/2023 - 07/2024 </strong>
-                    </div>
-                    <template for:each={Experience.Salesforce} for:item="sfExperience">
-                        <ul key={sfExperience} class="slds-list_dotted">
-                            <li>{sfExperience}</li>
-                        </ul>
-                    </template>
-                </lightning-accordion-section>
+                    <lightning-accordion-section name="C" label="BugendaiTech">
+                        <div class="pro-header"> <strong>SALESFORCE DEVELOPER
+                                Bugendaitech (2Years)
+                                11/2021 - 11/2223,</strong>
+                        </div>
+                        <template for:each={Experience.BugendaiTech} for:item="btExperience">
+                            <ul key={btExperience} class="slds-list_dotted">
+                                <li class="slds-text-color_inverse">{btExperience}</li>
+                            </ul>
+                        </template>
+                    </lightning-accordion-section>
+                </lightning-accordion>
 
-                <lightning-accordion-section name="C" label="BugendaiTech">
-                    <div class="pro-header"> <strong>SALESFORCE DEVELOPER
-                            Bugendaitech (2Years)
-                            11/2021 - 11/2223,</strong>
-                    </div>
-                    <template for:each={Experience.BugendaiTech} for:item="btExperience">
-                        <ul key={btExperience} class="slds-list_dotted">
-                            <li>{btExperience}</li>
-                        </ul>
-                    </template>
-                </lightning-accordion-section>
-            </lightning-accordion>
-
-        </lightning-tab>
-        <lightning-tab label="Skills">
-            <template for:each={skills} for:item="skill">
-                <ul key={skill}>
-                    <div class="slds-box slds-var-m-around_xxx-small">
-                        <li class="pro-header">{skill}</li>
-                    </div>
-                </ul>
-            </template>
-        </lightning-tab>
-        <lightning-tab label="Certifications">
-            <template for:each={Certifications} for:item="certification">
-                <ul key={certification} class="slds-list_dotted">
-                    <div class="pro-header">
-                        <li>{certification}</li>
-                    </div>
-                </ul>
-            </template>
-        </lightning-tab>
-        <lightning-tab label="Projects">
-            <div class="pro-header">
-                <strong>Projects</strong>
-            </div>
-            <div class="sub-header">
-                Leading Gas distribution infrastructure solution provider of USA.
-            </div>
-            <!-- <template for:each={Projects.Artera} for:item="Artera">
+            </lightning-tab>
+            <lightning-tab label="Skills">
+                <template for:each={skills} for:item="skill">
+                    <ul key={skill}>
+                        <div class="slds-box slds-var-m-around_xxx-small">
+                            <li class="pro-header">{skill}</li>
+                        </div>
+                    </ul>
+                </template>
+            </lightning-tab>
+            <lightning-tab label="Certifications">
+                <template for:each={Certifications} for:item="certification">
+                    <ul key={certification} class="slds-list_dotted">
+                        <div class="pro-header">
+                            <li>{certification}</li>
+                        </div>
+                    </ul>
+                </template>
+            </lightning-tab>
+            <lightning-tab label="Projects">
+                <div class="pro-header">
+                    <strong>Projects</strong>
+                </div>
+                <div class="sub-header">
+                    Leading Gas distribution infrastructure solution provider of USA.
+                </div>
+                <!-- <template for:each={Projects.Artera} for:item="Artera">
                 <ul key={Artera} class="slds-list_dotted">
                     <li>Sample</li>
                 </ul>
             </template> -->
-        </lightning-tab>
-    </lightning-tabset>
+            </lightning-tab>
+        </lightning-tabset>
+    </div>
 
-    <div class="slds-size_4-of-4">
+    <div class="slds-size_4-of-4 myCarousel myCarousel">
         <div class="slds-text-align_center slds-var-m-around_x-small pro-header">Achievements
             Highlights.</div>
         <lightning-carousel>

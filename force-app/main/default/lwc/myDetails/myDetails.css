@@ -1,7 +1,19 @@
-.c-container {
-    border: 1px solid #d8dde6;
-    margin: 10px 0 20px;
+.myCarousel
+{
+    background-color: #0a0a0afc;
 }
+.wrapper
+{
+    background-color: #0a0a0afc;
+}
+.myTabset
+{
+    background-color: #0a0a0afc;
+}
+/* .c-container {
+   
+    margin: 10px 0 20px;
+} */
 
 .header-column {
     padding: 0 2rem;

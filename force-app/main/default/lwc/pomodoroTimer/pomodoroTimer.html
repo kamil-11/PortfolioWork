@@ -1,0 +1,77 @@
+<template>
+    <lightning-card title="Pomodoro Timer" icon-name="utility:clock">
+        <div class="timer-container">
+            <!-- Timer Display -->
+            <div class="timer-display">
+                <div class="time-circle">
+                    <div class="time-text">{formattedTime}</div>
+                    <div class="session-label">{currentMode}</div>
+                    <div class="progress-percent">{progressPercent}%</div>
+                </div>
+                <div class="progress-ring">
+                    <svg class="progress-svg" viewBox="0 0 120 120">
+                        <circle class="progress-background" cx="60" cy="60" r="54" stroke-width="4" fill="none" />
+                        <circle class="progress-bar" cx="60" cy="60" r="54" stroke-width="4" fill="none" />
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Control Buttons -->
+            <div class="controls">
+                <button class="control-btn start-btn" onclick={toggleTimer} aria-label={startButtonLabel}
+                    title={startButtonLabel}>
+                    <svg class="btn-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"
+                        focusable="false">
+                        <path fill="currentColor" d="M8 5v14l11-7z" />
+                    </svg>
+                    <span class="btn-label">{startButtonLabel}</span>
+                </button>
+
+                <button class="control-btn reset-btn" onclick={resetTimer} aria-label="Reset" title="Reset">
+                    <svg class="btn-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"
+                        focusable="false">
+                        <path fill="currentColor" d="M12 6v3l4-4-4-4v3a8 8 0 1 0 8 8h-2a6 6 0 1 1-6-6z" />
+                    </svg>
+                    <span class="btn-label">Reset</span>
+                </button>
+
+                <button class="control-btn skip-btn" onclick={skipSession} aria-label="Skip" title="Skip">
+                    <svg class="btn-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"
+                        focusable="false">
+                        <path fill="currentColor" d="M4 4v16l12-8z" />
+                    </svg>
+                    <span class="btn-label">Skip</span>
+                </button>
+            </div>
+
+            <!-- Session Settings -->
+            <div class="settings">
+                <div class="setting-group">
+                    <label>Work Duration (min):</label>
+                    <lightning-input type="number" value={workDuration} min="1" max="60"
+                        onchange={handleWorkDurationChange} disabled={isRunning}
+                        class="setting-input"></lightning-input>
+                </div>
+
+                <div class="setting-group">
+                    <label>Break Duration (min):</label>
+                    <lightning-input type="number" value={breakDuration} min="1" max="30"
+                        onchange={handleBreakDurationChange} disabled={isRunning}
+                        class="setting-input"></lightning-input>
+                </div>
+            </div>
+
+            <!-- Stats Display -->
+            <div class="stats">
+                <div class="stat-item">
+                    <span class="stat-label">Sessions Completed:</span>
+                    <span class="stat-value">{completedSessions}</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Current Session:</span>
+                    <span class="stat-value">{currentSession} / 4</span>
+                </div>
+            </div>
+        </div>
+    </lightning-card>
+</template>
