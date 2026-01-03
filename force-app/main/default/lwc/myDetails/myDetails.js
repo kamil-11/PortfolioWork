@@ -67,12 +67,16 @@ export default class MyDetails extends LightningElement {
         }
     }
     @wire(getProjects)
-    projects({error,data})
+    wiredProjects({error,data})
     {
         if(data)
         {
-            this.projects = data;
-            console.log(this.projects);
+            // Convert Map to array for template iteration
+            this.projects = Object.entries(data).map(([header, responsibilities]) => ({
+                header,
+                responsibilities
+            }));
+            console.log('Projects:', this.projects);
         }
         else if(error)
         {

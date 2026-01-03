@@ -114,13 +114,29 @@
                     <strong>Projects</strong>
                 </div>
                 <div class="sub-header">
-                    Leading Gas distribution infrastructure solution provider of USA.
+                    Throughout my career,I have played a pivotal role in the end-to-end delivery of over Number projects
+                    within the Salesforce ecosystem.
+                    My contributions range from architecting complex LWC components to enhancing ISV partner packages,
+                    all focused on driving product scalability and delivering measurable business success.From
+                    developing connected apps to optimizing digital advertising features, my work focuses on creating
+                    sustainable,
+                    high-impact solutions that contribute to the long-term success of the product.
+
+                    Below is a curated selection of projects where I led the development of Apex backend services and
+                    modern LWC interfaces.
                 </div>
-                <!-- <template for:each={Projects.Artera} for:item="Artera">
-                <ul key={Artera} class="slds-list_dotted">
-                    <li>Sample</li>
-                </ul>
-            </template> -->
+                <template if:true={projects}>
+                    <template for:each={projects} for:item="project">
+                        <div key={project.header} class="slds-var-m-around_medium">
+                            <div class="pro-header">{project.header}</div>
+                            <ul class="slds-list_dotted">
+                                <template for:each={project.responsibilities} for:item="responsibility">
+                                    <li key={responsibility} class="slds-text-color_inverse">{responsibility}</li>
+                                </template>
+                            </ul>
+                        </div>
+                    </template>
+                </template>
             </lightning-tab>
         </lightning-tabset>
     </div>

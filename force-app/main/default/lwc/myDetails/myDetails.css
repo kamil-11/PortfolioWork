@@ -18,12 +18,17 @@
 .header-column {
     padding: 0 2rem;
 }
-
+:host {
+    --slds-c-accordion-summary-color-background: rgba(24, 50, 102, 0.817);
+    --slds-c-accordion-heading-text-color-hover: #965443;
+;
+    
+}
 .field-title {
     font-size: .75rem;
     line-height: 1.25;
     color: #54698d;
-    margin-bottom: .25rem;
+    margin-bottom: .25rem;  
 }
 .pro-header{
     font-size: larger;

@@ -22,7 +22,11 @@
         gap: 0.5rem;          /* tighter gap on small screens */
     }
 }
-
+.pro-header{
+    font-size: larger;
+    color: #54698d;
+    text-align: center;;
+}
 
 .slds-badge {
     font-size: 0.9rem;       /* slightly smaller for mobile */
@@ -74,6 +78,57 @@
       0 0 20px rgba(220,20,60,0.6),
       0 0 28px rgba(255,215,0,0.7);
 }
+.firstF{
+    --slds-c-badge-color-background: #CBD5E0;
+    background: rgb(238, 6, 230); /* magenta base */
+    color: rgb(255, 253, 253);
+    box-shadow: 
+      0 0 6px rgba(238, 6, 230, 0.9),
+      0 0 12px rgba(255, 36, 0, 0.9),  /* scarlet glow */
+      0 0 22px rgba(238, 6, 230, 0.7),
+      0 0 32px rgba(255, 36, 0, 0.7);
+}
+.firstG{
+    --slds-c-badge-color-background: #CBD5E0;
+    background: rgb(6, 192, 238); /* cyan base */
+    color: white;
+    box-shadow: 
+      0 0 6px rgba(6, 192, 238, 0.9),
+      0 0 12px rgba(0, 255, 255, 0.9),  /* cyan glow */
+      0 0 22px rgba(6, 192, 238, 0.7),
+      0 0 32px rgba(0, 255, 255, 0.7);
+}
+.firstH{
+    --slds-c-badge-color-background: #CBD5E0;
+    background: rgb(154, 34, 32); /* crimson base */
+    color: white;
+    box-shadow: 
+      0 0 6px rgba(154, 34, 32, 0.9),
+      0 0 12px rgba(255, 105, 180, 0.9),  /* hot pink glow */
+      0 0 22px rgba(154, 34, 32, 0.7),
+      0 0 32px rgba(255, 105, 180, 0.7);
+}
+.firstI{
+    --slds-c-badge-color-background: #CBD5E0;
+    background: rgb(195, 0, 255); /* purple base */
+    color: white;
+    box-shadow: 
+      0 0 6px rgba(195, 0, 255, 0.9),
+      0 0 12px rgba(138, 43, 226, 0.9),  /* blue violet glow */
+      0 0 22px rgba(195, 0, 255, 0.7),
+      0 0 32px rgba(138, 43, 226, 0.7);
+}
+.firstJ{
+    --slds-c-badge-color-background: #CBD5E0;
+    background: rgb(134, 6, 238); /* purple base */
+    color: white;
+    box-shadow: 
+      0 0 6px rgba(134, 6, 238, 0.9),
+      0 0 12px rgba(255, 140, 0, 0.9),  /* orange glow */
+      0 0 22px rgba(134, 6, 238, 0.7),
+      0 0 32px rgba(255, 140, 0, 0.7);
+}
+
 .firstE{
     margin-top: 50px;
     
@@ -103,4 +158,3 @@
     border-radius: 12px;  /* less pill-like */
     font-size: 1rem;
 }
-

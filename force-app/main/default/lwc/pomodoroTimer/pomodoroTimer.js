@@ -2,6 +2,8 @@ import { LightningElement, track } from 'lwc';
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 
 export default class PomodoroTimer extends LightningElement {
+
+  currentPageRef;
     @track timeLeft = 1500; // 25 minutes in seconds
     @track workDuration = 25; // minutes
     @track breakDuration = 5; // minutes
@@ -12,7 +14,7 @@ export default class PomodoroTimer extends LightningElement {
     
     timer;
     totalTime = 1500;
-    
+
     // Computed properties
     get formattedTime() {
         const minutes = Math.floor(this.timeLeft / 60);
